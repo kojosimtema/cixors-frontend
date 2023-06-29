@@ -1,0 +1,7 @@
+.hs-cp {
+    width: 30px;
+}
+
+.hs-cp:active {
+    transform: scale(0.8);
+}

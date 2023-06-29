@@ -1,0 +1,41 @@
+.editUrl-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 257px;
+    /* width: 500px; */
+    flex-direction: column;
+}
+
+.editUrl-wrapper form {
+    width: 500px;
+    margin-bottom: 100px;
+}
+
+.edit-input input{
+    padding: 15px;
+}
+
+.qrcode-wrapper {
+    height: 500px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.qrcode {
+    width: 250px;
+    height: 250px;
+}
+
+.disable-download {
+    pointer-events: none;
+    opacity: 0.2;
+}
+
+.qrcode-btns {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 250px;
+}

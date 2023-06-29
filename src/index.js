@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import DisplayPage from './views/displayPage/DisplayPage';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -7,7 +9,15 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <Switch>
+        <Route path='404' exact render={() => <div>404 || Page Not Found</div>} />
+        <Route path='401' exact render={() => <div>401 || Page Not Found</div>} />
+        <Route path='500' exact render={() => <div>500 || Internal Server Error</div>} />
+        <Route path='/sc/:path_name' render={() => <DisplayPage />} />
+        <Route path='/' component={App} />
+      </Switch>
+    </Router>
   </React.StrictMode>
 );
 
