@@ -75,7 +75,7 @@ const Homepage = ({ setToken }) => {
           method: 'POST',
           body: JSON.stringify({
             long_url: long_url,
-            host_url: `${host}/sc/`,
+            host_url: `${host}/cx/`,
          }),
          headers: {
           'Content-type': 'application/json; charset=UTF-8',
