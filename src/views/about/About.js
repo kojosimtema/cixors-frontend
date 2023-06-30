@@ -46,7 +46,7 @@ const About = () => {
                                 Cixors also allows users to customize their shortened URLs. 
                                 Users can customize the shorl URL to reflect their brand or content. To choose their own custom domain name as well,
                                 users will need to integrate our API on thier website and send a request with thier customized domian name. Our API can be found 
-                                <a href=''><span class="text-blue-600 dark:text-blue-500"> here. </span></a>
+                                <a href='https://cixors.onrender.com/'><span class="text-blue-600 dark:text-blue-500"> here. </span></a>
                                 This feature is particularly useful for individuals or small businesses who want to create branded links for their 
                             </p>
                             <h2 class="text-4xl font-extrabold dark:text-white">

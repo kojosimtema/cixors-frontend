@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { useState, useEffect, useRef } from "react";
 import login_image from '../../assets/images/default_background.jpg';
-import NotFound from "../notFound/NotFound";
 import Unauthorized from "../unauthorized/Unauthorized";
 
 const ChangePassword = () => {

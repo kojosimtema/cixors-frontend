@@ -7,14 +7,11 @@ import login_image from '../../assets/images/default_background.jpg';
 import dummyqr from '../../assets/images/qr-code.png'
 
 const EditUrl = () => {
-    const [hostUrl, setHostUrl] = useState('');
     const [urlPath, setUrlPath] = useState('');
     const [url, setUrl] = useState('');
     const [qrCode, setQrcode] = useState();
     const [success, setSuccess] = useState(false);
     const [message, setMessage] = useState('');
-    const [error, setError] = useState('');
-    // const navigate = NavLink();
     const [tokenValid, setTokenValid] = useState();
     const [tokenExp, setTokenExp] = useState('');
     
@@ -53,7 +50,6 @@ const EditUrl = () => {
             fetch(`/scx/${id}`)
             .then(response => response.json())
             .then(data => {
-                setHostUrl(data.host_url)
                 setUrlPath(data.url_path)
                 setUrl(data.short_url)
                 setQrcode(data.qr_code)
@@ -113,7 +109,7 @@ const EditUrl = () => {
         .then(response => response.json())
         .then(data => {
             setQrcode(data.qrcode);
-            setError(data.message);
+            setMessage(data.message);
             // navigate(-1)
         })
         .catch(err => console.log(err))
