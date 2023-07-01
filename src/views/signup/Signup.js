@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 const Signup = () => {
     const [accesToken, setAccessToken] = useState('');
     const [failedSignup, setFailedSignup] = useState('');
-    const [user, setUser] = useState('')
+    const [success, setSuccess] = useState()
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -32,8 +32,8 @@ const Signup = () => {
         })
         .then(response => response.json())
         .then(data => {
-            setUser(data.id)
-            setFailedSignup(data.message);
+            setSuccess(data.success)
+            // setFailedSignup(data.message);
         })
         .then(err => console.log(err))
     };
@@ -53,13 +53,13 @@ const Signup = () => {
             }, 5000);  
     }
    
-    console.log(user)
+    console.log(success)
 
     return (
         
         <>
             {
-                user && 
+                success && 
                 verifyUser()
             }
             {
@@ -70,10 +70,11 @@ const Signup = () => {
                         <h2  style={{marginTop: '10px'}} className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Create a New Account</h2>
                     </div>
                     {
-                        user &&
+                        success &&
                         <div id="alert-3" style={{top: '27px', marginBottom: '27px'}} class="success-alert flex p-4 mb-4 text-green-800 rounded-lg bg-green-100 dark:bg-gray-800 dark:text-green-400" role="alert">
                             <div style={{fontSize: '18px', fontWeight: '400'}} class="ml-3 text-sm font-medium">
-                                {`Successfully signed up. Check your email "${email}" for Verification Code`}
+                                {success}
+                                {/* {`Successfully signed up. Check your email "${email}" for Verification Code`} */}
                             </div>
                         </div>
                     }
@@ -110,8 +111,8 @@ const Signup = () => {
                                 </div>
                             </div>
                             {
-                                failedSignup &&
-                                <span style={{color: 'red'}}>{failedSignup}</span>
+                                !success &&
+                                <span style={{color: 'red'}}>{success}</span>
                             }
                             <div>
                                 <button type="submit" className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sign Up</button>

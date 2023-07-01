@@ -29,7 +29,7 @@ function App() {
           <SideBar />
           <Switch>
             <Route path='/' exact render={() => <Homepage />} />
-            <Route path='/sc/:path_name' render={() => <DisplayPage />} />
+            <Route path='/cx/:path_name' render={() => <DisplayPage />} />
             <Route path='/signin' render={() => <Signin />} />
             <Route path='/signup' render={() => <Signup />} />
             {/* <Route path='/url/:path' render={() => <UrlPage />} /> */}

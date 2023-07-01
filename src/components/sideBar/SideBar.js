@@ -15,7 +15,10 @@ const SideBar = () => {
         })
         .then(response => response.json())
         .then(data => setLogout(data.success))
-        .catch(err => console.log(err))
+        .catch(err => {
+            // console.log(err);
+            setLogout(true);
+        })
     }
 
     const handleLogout = () => {
