@@ -4,8 +4,8 @@ import { useState, useEffect } from 'react';
 
 
 const Signup = () => {
-    const [accesToken, setAccessToken] = useState('');
-    const [failedSignup, setFailedSignup] = useState('');
+    // const [accesToken, setAccessToken] = useState('');
+    const [message, setMessage] = useState('');
     const [success, setSuccess] = useState()
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
@@ -13,9 +13,9 @@ const Signup = () => {
     const [confirmPass, setConfirmPass] = useState('');
 
 
-    useEffect(() =>{
-        setAccessToken(localStorage.getItem('token'))
-    }, [])
+    // useEffect(() =>{
+    //     setAccessToken(localStorage.getItem('token'))
+    // }, [])
 
     const signup = () => {
         fetch('/auth/signup', {
@@ -32,10 +32,10 @@ const Signup = () => {
         })
         .then(response => response.json())
         .then(data => {
-            setSuccess(data.success)
-            // setFailedSignup(data.message);
+            setSuccess(data.success);
+            setMessage(data.message);
         })
-        .then(err => console.log(err))
+        .catch(err => console.log(err))
     };
 
    
@@ -73,7 +73,7 @@ const Signup = () => {
                         success &&
                         <div id="alert-3" style={{top: '27px', marginBottom: '27px'}} class="success-alert flex p-4 mb-4 text-green-800 rounded-lg bg-green-100 dark:bg-gray-800 dark:text-green-400" role="alert">
                             <div style={{fontSize: '18px', fontWeight: '400'}} class="ml-3 text-sm font-medium">
-                                {success}
+                                {message}
                                 {/* {`Successfully signed up. Check your email "${email}" for Verification Code`} */}
                             </div>
                         </div>
@@ -112,7 +112,7 @@ const Signup = () => {
                             </div>
                             {
                                 !success &&
-                                <span style={{color: 'red'}}>{success}</span>
+                                <span style={{color: 'red', fontSize: '15px'}}>{message}</span>
                             }
                             <div>
                                 <button type="submit" className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sign Up</button>
