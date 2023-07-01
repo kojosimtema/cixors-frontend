@@ -1,6 +1,6 @@
 import login_image from '../../assets/images/default_background.jpg';
 import { useState, useEffect } from 'react';
-
+import { Link } from 'react-router-dom/cjs/react-router-dom';
 
 const Signin = () => {
     const [accesToken, setAccessToken] = useState('');
@@ -72,7 +72,7 @@ const Signin = () => {
                                 <div className="flex items-center justify-between">
                                     <label for="password" className="block text-sm font-medium leading-6 text-gray-900">Password</label>
                                     <div className="text-sm">
-                                        <a href="/resetpassword" className="font-semibold text-indigo-600 hover:text-indigo-500">Forgot password?</a>
+                                        <Link t="/resetpassword" className="font-semibold text-indigo-600 hover:text-indigo-500">Forgot password?</Link>
                                     </div>
                                 </div>
                                 <div className="mt-2">
@@ -90,7 +90,7 @@ const Signin = () => {
                     </div>
                     <div className="sm:mx-auto sm:w-full sm:max-w-sm" >
                         <p style={{textAlign: 'center', marginTop: '10px'}}>
-                            Do not have an account? Sign Up <a href='/signup' style={{color: 'blue'}}>Here</a>
+                            Do not have an account? Sign Up <Link to='/signup' style={{color: 'blue'}}>Here</Link>
                         </p>
                     </div>
                 </div>

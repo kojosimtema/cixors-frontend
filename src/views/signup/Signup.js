@@ -1,6 +1,7 @@
 import './Signup.css';
 import login_image from '../../assets/images/default_background.jpg';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom/cjs/react-router-dom';
 
 
 const Signup = () => {
@@ -121,7 +122,7 @@ const Signup = () => {
                     </div>
                     <div className="sm:mx-auto sm:w-full sm:max-w-sm" >
                         <p style={{textAlign: 'center', marginTop: '10px'}}>
-                            Already have an account? Signin <a href='/signin' style={{color: 'blue'}}>Here</a>
+                            Already have an account? Signin <Link to='/signin' style={{color: 'blue'}}>Here</Link>
                         </p>
                     </div>
                 </div>
