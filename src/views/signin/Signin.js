@@ -15,7 +15,7 @@ const Signin = () => {
     }, [])
 
     const login = async () => {
-        await fetch('/auth/login', {
+        await fetch('https://cixors.onrender.com/auth/login', {
         method: 'POST',
         body: JSON.stringify({
         email: email,
