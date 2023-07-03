@@ -1,6 +1,6 @@
 import './PerformancePage.css';
 import { useState, useEffect } from 'react';
-import { useParams } from "react-router-dom/cjs/react-router-dom";
+import { useParams, Link } from "react-router-dom/cjs/react-router-dom";
 
 
 const PerformancePage = () => {
@@ -77,10 +77,10 @@ const PerformancePage = () => {
                             <thead class="text-xl text-gray-700 bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                 <tr>
                                     <th scope="col" class="px-6 py-3">
-                                        <a href={longUrl} target='_blank' rel='noreferrer'>{shortUrl}</a>
+                                        <Link to={longUrl} target='_blank' rel='noreferrer'>{shortUrl}</Link>
                                     </th>
                                     <th scope="col" class="px-6 py-3">
-                                    <a href={longUrl} target='_blank' rel='noreferrer'>{longUrl}</a>
+                                    <Link to={longUrl} target='_blank' rel='noreferrer'>{longUrl}</Link>
                                     </th>
                                     <th scope="col" class="px-6 py-3">
                                         {urlClicks} <span className='fpx-6 py-3'> Click{urlClicks === 1 ? '' : 's'}</span>
