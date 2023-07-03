@@ -31,7 +31,10 @@ const Signup = () => {
             'Content-type': 'application/json; charset=UTF-8',
          },
         })
-        .then(response => response.json())
+        .then(response => {
+            console.log(response);
+            response.json();
+        })
         .then(data => {
             setSuccess(data.success);
             setMessage(data.message);
@@ -122,7 +125,7 @@ const Signup = () => {
                     </div>
                     <div className="sm:mx-auto sm:w-full sm:max-w-sm" >
                         <p style={{textAlign: 'center', marginTop: '10px'}}>
-                            Already have an account? Signin <Link to='/signin' style={{color: 'blue'}}>Here</Link>
+                            Already have an account? Signin <a href='/signin' style={{color: 'blue'}}>Here</a>
                         </p>
                     </div>
                 </div>
