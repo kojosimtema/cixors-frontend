@@ -7,13 +7,16 @@ const SideBar = () => {
     const username = localStorage.getItem('username')
 
     const logoutUser = () => {
-        fetch('/auth/logout', {
+        fetch('https://cixors.onrender.com/auth/logout', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
                 'Authorization': `Bearer ${token}`  },
         })
-        .then(response => response.json())
+        .then(response => {
+            console.log(response);
+            response.json();
+        })
         .then(data => setLogout(data.success))
         .catch(err => {
             console.log(err);

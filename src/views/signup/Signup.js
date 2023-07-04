@@ -19,7 +19,7 @@ const Signup = () => {
     // }, [])
 
     const signup = () => {
-        fetch('/auth/signup', {
+        fetch('https://cixors.onrender.com/auth/signup', {
         method: 'POST',
         body: JSON.stringify({
         username: username,
