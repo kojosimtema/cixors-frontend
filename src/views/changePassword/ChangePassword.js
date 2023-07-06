@@ -88,7 +88,7 @@ const ChangePassword = () => {
     return (
         <>
             {
-                token && username == currentUser ?
+                token && username === currentUser ?
                 <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8" style={{marginLeft: '16rem'}}>
                     <div style={{paddingTop: '40px'}} className="sm:mx-auto sm:w-full sm:max-w-sm">
                         <img className="mx-auto h-10 w-auto" style={{width: '5rem', height: '5rem', borderRadius: '50%'}} src={login_image} alt="Login" />

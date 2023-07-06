@@ -1,11 +1,11 @@
 import './Signup.css';
 import login_image from '../../assets/images/default_background.jpg';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom/cjs/react-router-dom';
 
 
 const Signup = () => {
-    // const [accesToken, setAccessToken] = useState('');
+
     const [message, setMessage] = useState('');
     const [success, setSuccess] = useState()
     const [username, setUsername] = useState('');
@@ -13,10 +13,6 @@ const Signup = () => {
     const [password, setPassword] = useState('');
     const [confirmPass, setConfirmPass] = useState('');
 
-
-    // useEffect(() =>{
-    //     setAccessToken(localStorage.getItem('token'))
-    // }, [])
 
     const signup = () => {
         fetch('/auth/signup', {

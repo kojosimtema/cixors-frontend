@@ -12,7 +12,7 @@ const DisplayPage = () => {
     
     useEffect(() => {
       const fetchPage = () => {
-        fetch(`https://cixors.onrender.com/scx/${path_name}`)
+        fetch(`/scx/${path_name}`)
         .then(response => response.json())
         .then(data => setLongUrl(data.long_url))
         .catch(err => console.log(err))
