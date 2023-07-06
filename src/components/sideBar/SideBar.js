@@ -7,14 +7,13 @@ const SideBar = () => {
     const username = localStorage.getItem('username')
 
     const logoutUser = () => {
-        fetch('https://cixors.onrender.com/auth/logout', {
+        fetch(`/auth/logout/${token}`, {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
-                'Authorization': `Bearer ${token}`  },
+            },
         })
         .then(response => {
-            console.log(response);
             response.json();
         })
         .then(data => setLogout(data.success))
@@ -30,8 +29,7 @@ const SideBar = () => {
             window.location.replace('/')
             localStorage.removeItem('token');
             localStorage.removeItem('user_id');
-            localStorage.removeItem('username');
-            
+            localStorage.removeItem('username');   
         }
     }
 

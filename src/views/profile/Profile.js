@@ -18,24 +18,19 @@ const Profile = () => {
 
     useEffect(() => {
         const checkValidToken = () => {
-            fetch('/auth/checkvalidtoken', {
-                method: 'GET',
-                headers: {
-                    'Authorization': `Bearer ${token}`,
-                },
-            })
+            fetch(`/auth/checkvalidtoken/${token}`)
             .then(response => response.json())
             .then(data => {
                 setTokenValid(data.valid_token);
-                setTokenExp(data.msg);   
+                setTokenExp(data.message);   
             })
             .catch(err => console.log(err))
         }
 
         if (token){
             checkValidToken();
-            if(tokenValid === false || tokenExp){
-                window.alert(`Your Your session has expired, please signin again`);
+            if(tokenValid === false){
+                window.alert(tokenExp);
                 localStorage.clear();
                 window.location.replace('/signin');
             }
@@ -57,7 +52,6 @@ const Profile = () => {
         fetchUser();
     }, [username])
 
-    console.log(urls)
    
     return (
         <> 

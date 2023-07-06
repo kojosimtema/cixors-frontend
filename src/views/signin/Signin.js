@@ -15,7 +15,7 @@ const Signin = () => {
     }, [])
 
     const login = async () => {
-       await fetch('https://cixors.onrender.com/auth/login', {
+      await fetch('/auth/login', {
         method: 'POST',
         body: JSON.stringify({
         email: email,
@@ -26,12 +26,10 @@ const Signin = () => {
          },
         })
         .then((response) => {
-            console.log(response);
-            response.json();
+            return response.json();
         })
-        .then(data => {
-            // console.log(data);
-            if(data.success){
+        .then((data) => {
+            if(data.success === true){
                 setAccessToken(data.access_token);
                 localStorage.setItem('user_id', data.user_id)
                 localStorage.setItem('token', data.access_token);

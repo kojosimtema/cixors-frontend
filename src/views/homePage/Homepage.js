@@ -2,7 +2,7 @@ import './Homepage.css';
 import { useState, useEffect } from 'react';
 import About from '../about/About';
 
-const Homepage = ({ setToken }) => {
+const Homepage = () => {
     const [topUrl, setTopUrl] = useState([]);
     const [longUrl, setLongUrl] = useState('');
     const [shortUrl, setShortUrl] = useState('');
@@ -11,35 +11,26 @@ const Homepage = ({ setToken }) => {
     const [tokenValid, setTokenValid] = useState();
     const [tokenExp, setTokenExp] = useState('');
 
-
     const host = window.location.host
-    // const token = ''
     const token = localStorage.getItem('token')
     const userId = localStorage.getItem('user_id')
-    // const userId = 1
-    console.log(`token expired is ${tokenValid}`);
 
 
     useEffect(() => {
         const checkValidToken = () => {
-            fetch('/auth/checkvalidtoken', {
-                method: 'GET',
-                headers: {
-                    'Authorization': `Bearer ${token}`,
-                },
-            })
+            fetch(`/auth/checkvalidtoken/${token}`)
             .then(response => response.json())
             .then(data => {
                 setTokenValid(data.valid_token);
-                setTokenExp(data.msg);
+                setTokenExp(data.message);
             })
             .catch(err => console.log(err))
         }
 
         if (token){
             checkValidToken();
-            if(tokenValid === false || tokenExp){
-                window.alert(`Your Your session has expired, please signin again`);
+            if(tokenValid === false){
+                window.alert(tokenExp);
                 localStorage.clear();
                 window.location.replace('/signin');
             }
@@ -66,12 +57,9 @@ const Homepage = ({ setToken }) => {
 
     }, [userId, token])
 
-    console.log(`user ID IS ${userId}`)
-    console.log(`top is ${topUrl}`)
-    console.log(`TOKEN IS ${token}`)
 
     const generateShortUrl = async (long_url) => {
-        await fetch('scx/', {
+        await fetch('/scx/', {
           method: 'POST',
           body: JSON.stringify({
             long_url: long_url,
@@ -102,7 +90,7 @@ const Homepage = ({ setToken }) => {
     const closeAlert = () => {
         setAlert(false);
     };
-    // console.log(`${host}/sc`)
+    
 
     return (
         <>

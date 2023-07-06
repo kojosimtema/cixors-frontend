@@ -5,6 +5,7 @@ import Unauthorized from "../unauthorized/Unauthorized";
 
 const EditProfile = () => {
     const [newUsername, setNewUsername] = useState('');
+    const [success, setSuccess] = useState(false);
     const [userName, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [editError, setEditError] = useState('');
@@ -20,24 +21,19 @@ const EditProfile = () => {
 
     useEffect(() => {
         const checkValidToken = () => {
-            fetch('/auth/checkvalidtoken', {
-                method: 'GET',
-                headers: {
-                    'Authorization': `Bearer ${token}`,
-                },
-            })
+            fetch(`/auth/checkvalidtoken/${token}`)
             .then(response => response.json())
             .then(data => {
                 setTokenValid(data.valid_token);
-                setTokenExp(data.msg);
+                setTokenExp(data.message);
             })
             .catch(err => console.log(err))
         }
 
         if (token){
             checkValidToken();
-            if(tokenValid === false || tokenExp){
-                window.alert(`Your Your session has expired, please signin again`);
+            if(tokenValid === false){
+                window.alert(tokenExp);
                 localStorage.clear();
                 window.location.replace('/signin');
             }
@@ -74,8 +70,14 @@ const EditProfile = () => {
         })
         .then(response => response.json())
         .then(data => {
-            setNewUsername(data.username);
-            setEditError(data.message);
+            if (data.username){
+                setNewUsername(data.username);
+                // setSuccess(true);
+            }
+            else{
+                setEditError(data.message);
+            }
+            
         })
         .catch(err => console.log(err))
     }
@@ -83,19 +85,26 @@ const EditProfile = () => {
     const handleEditUser = (e) => {
         e.preventDefault();
         editUser();
-        if(newUsername){
+        if (newUsername){
+            setSuccess(true);
             localStorage.setItem('username', newUsername);
+            window.setTimeout(
+            
+                function redirectPage()
+                {
+                    window.location.replace(`/profile/${newUsername}`)
+                }, 3000); 
         }
     }
 
     return (
         <>
-            {
+            {/* {
                 newUsername &&
                 window.location.replace(`/profile/${newUsername}`)
-            }
+            } */}
             {
-                token && currentUser == username ?
+                token ?
                 <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8" style={{marginLeft: '16rem'}}>
                     <div className="sm:mx-auto sm:w-full sm:max-w-sm">
                         <img className="mx-auto h-10 w-auto" style={{width: '5rem', height: '5rem', borderRadius: '50%'}} src={login_image} alt="Login" />
@@ -119,6 +128,10 @@ const EditProfile = () => {
                             {
                                 editError &&
                                 <span style={{color: 'red'}}>{editError}</span>
+                            }
+                            {
+                                success &&
+                                <span style={{color: 'green'}}>Profile Successfully edited</span>
                             }
                             <div>
                                 <button type="submit" className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>

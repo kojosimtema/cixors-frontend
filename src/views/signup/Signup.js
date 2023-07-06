@@ -19,7 +19,7 @@ const Signup = () => {
     // }, [])
 
     const signup = () => {
-        fetch('https://cixors.onrender.com/auth/signup', {
+        fetch('/auth/signup', {
         method: 'POST',
         body: JSON.stringify({
         username: username,
@@ -33,7 +33,7 @@ const Signup = () => {
         })
         .then(response => {
             console.log(response);
-            response.json();
+            return response.json();
         })
         .then(data => {
             setSuccess(data.success);
@@ -57,7 +57,6 @@ const Signup = () => {
             }, 5000);  
     }
    
-    console.log(success)
 
     return (
         

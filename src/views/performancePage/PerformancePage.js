@@ -19,12 +19,7 @@ const PerformancePage = () => {
 
     useEffect(() => {
         const checkValidToken = () => {
-            fetch('/auth/checkvalidtoken', {
-                method: 'GET',
-                headers: {
-                    'Authorization': `Bearer ${token}`,
-                },
-            })
+            fetch(`/auth/checkvalidtoken/${token}`)
             .then(response => response.json())
             .then(data => {
                 setTokenValid(data.valid_token);
@@ -35,8 +30,8 @@ const PerformancePage = () => {
 
         if (token){
             checkValidToken();
-            if(tokenValid === false || tokenExp){
-                window.alert(`Your Your session has expired, please signin again`);
+            if(tokenValid === false){
+                window.alert(tokenExp);
                 localStorage.clear();
                 window.location.replace('/signin');
             }
@@ -61,7 +56,6 @@ const PerformancePage = () => {
         fetchUrl();
     }, [url_id])
  
-    // console.log(`URL infor is ${url}`);
     
     return (
         

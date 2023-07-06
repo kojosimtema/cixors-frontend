@@ -8,7 +8,7 @@ const ResetPassword = () => {
     const [message, setMessage] = useState('');
 
     const resetPassword = () => {
-        fetch(`/auth/resetpassword/${email}`, {
+        fetch(`https://cixors.onrender.com/auth/resetpassword/${email}`, {
             method: 'PUT',
             body: JSON.stringify({
             email: email,
