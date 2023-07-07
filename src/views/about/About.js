@@ -47,7 +47,7 @@ const About = () => {
                                 Users can customize the shorl URL to reflect their brand or content. To choose their own custom domain name as well,
                                 users will need to integrate our API on thier website and send a request with thier customized domian name. Our API can be found 
                                 <a href='https://cixors.onrender.com/' target='_blank' rel='noreferrer'><span class="text-blue-600 dark:text-blue-500"> here. </span></a>
-                                This feature is particularly useful for individuals or small businesses who want to create branded links for their 
+                                This feature is particularly useful for individuals or small businesses who want to create branded links for their business
                             </p>
                             <h2 class="text-4xl font-extrabold dark:text-white">
                                 QR Code Generation
