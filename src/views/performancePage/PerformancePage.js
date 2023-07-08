@@ -63,7 +63,7 @@ const PerformancePage = () => {
             {
                 token &&
                 <div className='homepage-wrapper'>
-                    <div style={{top: '80px'}} class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                    <div id='pf' class="relative overflow-x-auto shadow-md sm:rounded-lg">
                         <table class="w-full text-xl text-left text-gray-500 dark:text-gray-400">
                             <caption class="p-5 text-3xl font-semibold text-left text-gray-900 bg-white dark:text-white dark:bg-gray-800">
                                 URL Analytics

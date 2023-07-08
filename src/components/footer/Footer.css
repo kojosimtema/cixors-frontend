@@ -1,6 +1,24 @@
 
-.footer {
+#footer {
     width: 81%;
-    left: 257px;
+    margin-left: 257px;
     /* position: relative; */
+}
+
+/* MOBILE RESPONSIVE SECTION */
+@media screen and (max-width: 480px) {
+    #footer {
+        margin: unset;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-left: 10px;
+        padding-right: 10px;
+        width: 100%;
+    }
+
+    #footer ul li a{
+        margin-right: 0.5rem;
+    }
 }

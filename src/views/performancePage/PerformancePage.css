@@ -1,3 +1,7 @@
+#pf {
+    top: 80px;
+}
+
 th, td {
     text-align: center;
 }
@@ -9,4 +13,37 @@ td:nth-child(1), td:nth-child(2){
 td {
     padding-left: 10px;
     padding-right: 10px;
+}
+
+@media screen and (max-width: 480px) {
+    #pf {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    #pf table {
+        display: inline-block;
+    }
+
+    #pf table caption{
+        display: inline-block;
+        width: 100%;
+        font-size: 24px;
+    }
+
+    #pf table thead {
+        display: inline-block;
+        font-size: 12px;
+        line-height: normal;
+    }
+
+    #pf table ul li div div {
+        
+        font-size: 18px;
+    }
+
+    #pf table ul li div p {
+        
+        font-size: 16px;
+    }
 }

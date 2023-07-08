@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { useState, useEffect, useRef } from "react";
 import login_image from '../../assets/images/default_background.jpg';
 import Unauthorized from "../unauthorized/Unauthorized";
+import './ChangePassword.css'
 
 const ChangePassword = () => {
     const [password, setPassword] = useState('');
@@ -89,7 +90,7 @@ const ChangePassword = () => {
         <>
             {
                 token && username === currentUser ?
-                <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8" style={{marginLeft: '16rem'}}>
+                <div id="change-pass" className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
                     <div style={{paddingTop: '40px'}} className="sm:mx-auto sm:w-full sm:max-w-sm">
                         <img className="mx-auto h-10 w-auto" style={{width: '5rem', height: '5rem', borderRadius: '50%'}} src={login_image} alt="Login" />
                         <h2  style={{marginTop: '10px'}} className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">

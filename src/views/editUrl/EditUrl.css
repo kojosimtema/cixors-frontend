@@ -39,3 +39,30 @@
     justify-content: space-around;
     height: 250px;
 }
+
+@media screen and (max-width: 480px) {
+    .editUrl-wrapper {
+        margin: 0 auto;
+        /* width: 97%; */
+        top: 50px;
+        position: relative;
+    }
+
+    .editUrl-wrapper form {
+        width: 95%;
+        margin-top: 25px;
+    }
+
+    .qrcode-wrapper {
+        height: 300px;
+    }
+
+    .qrcode, .qrcode-btns {
+        height: 180px;
+        width: 180px;
+    }
+
+    .qrcode-btns {
+        width: 140px;
+    }
+}

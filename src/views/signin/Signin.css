@@ -1,0 +1,9 @@
+#signin-wrapper {
+    margin-left: 16rem;
+}
+
+@media screen and (max-width: 480px) {
+    #signin-wrapper {
+        margin-left: unset;
+    }
+}

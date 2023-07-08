@@ -83,7 +83,7 @@ const UrlHistory = () => {
             
             function removethis()
             {
-                setCopied(0)
+                setCopied(false)
             }, 4000);          
     }
 
@@ -97,7 +97,7 @@ const UrlHistory = () => {
             {
                 token &&
                 <div className='homepage-wrapper'>
-                    <div style={{top: '80px'}} class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                    <div id='history' class="relative overflow-x-auto shadow-md sm:rounded-lg">
                         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                             <caption class="p-5 text-4xl font-semibold text-left text-gray-900 bg-white dark:text-white dark:bg-gray-800">
                                 URL History
@@ -164,7 +164,7 @@ const UrlHistory = () => {
                     </div>
                     {
                         copied &&
-                        <div style={{position: 'fixed', left: '670px', top: '20px', width: '300px'}} id="alert-3" class="flex p-4 mb-4 text-green-800 rounded-lg bg-green-100 dark:bg-gray-800 dark:text-green-400" role="alert">
+                        <div id="alert-3" class="copy flex p-4 mb-4 text-green-800 rounded-lg bg-green-100 dark:bg-gray-800 dark:text-green-400" role="alert">
                             <div class="ml-3 text-sm font-medium">
                                 Url Copied
                             </div>
@@ -172,7 +172,7 @@ const UrlHistory = () => {
                     }
                     {
                         deleted &&
-                        <div style={{position: 'fixed', left: '670px', top: '20px', width: '300px'}} id="alert-3" class="flex p-4 mb-4 text-green-800 rounded-lg bg-green-100 dark:bg-gray-800 dark:text-green-400" role="alert">
+                        <div id="alert-3" class="delete flex p-4 mb-4 text-green-800 rounded-lg bg-green-100 dark:bg-gray-800 dark:text-green-400" role="alert">
                             <div class="ml-3 text-sm font-medium">
                                 {deleted}
                             </div>

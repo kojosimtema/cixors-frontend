@@ -1,3 +1,8 @@
+.pfl {
+    margin-left: 256px;
+    min-height: 800px;
+}
+
 .profile-wrapper {
     margin: 0 auto;
     background: whitesmoke;
@@ -66,4 +71,36 @@
 .profile-btns {
     display: flex;
     justify-content: space-evenly;
+}
+
+
+/* MOBILE RESPONSIVE SECTION */
+
+@media screen and (max-width: 480px) {
+    .pfl {
+        margin: unset;
+        width: 100%;
+    }
+
+    .profile-wrapper {
+        position: relative;
+        width: 100%;
+        min-height: 800px;
+    }
+
+    .profile-main {
+        width: 95%;
+        flex-direction: column;
+        position: relative;
+        top: 30px;
+
+    }
+
+    .profile-img {
+        width: auto;
+    }
+
+    .profile-details {
+        width: 93%;
+    }
 }

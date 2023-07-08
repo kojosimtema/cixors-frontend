@@ -1,0 +1,14 @@
+#ver-user {
+    margin-left: 16rem;
+}
+
+#ver-user .success-alert {
+    position: relative;
+    top: 30px;
+}
+
+@media screen and (max-width: 480px) {
+    #ver-user {
+        margin: unset;
+    }
+}

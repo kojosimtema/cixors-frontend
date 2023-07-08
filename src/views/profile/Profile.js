@@ -58,7 +58,7 @@ const Profile = () => {
             {
                 token && user.id &&
                 
-                <div style={{marginLeft: '256px', height: '642px'}}>
+                <div className='pfl'>
                     
                     <div className='profile-wrapper'>
                         <h2 style={{paddingTop: '50px'}} className="text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">

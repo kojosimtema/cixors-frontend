@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import login_image from '../../assets/images/default_background.jpg';
 import Unauthorized from "../unauthorized/Unauthorized";
+import './EditProfile.css'
 
 const EditProfile = () => {
     const [newUsername, setNewUsername] = useState('');
@@ -103,7 +104,7 @@ const EditProfile = () => {
             } */}
             {
                 token ?
-                <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8" style={{marginLeft: '16rem'}}>
+                <div id="edit-pro" className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
                     <div className="sm:mx-auto sm:w-full sm:max-w-sm">
                         <img className="mx-auto h-10 w-auto" style={{width: '5rem', height: '5rem', borderRadius: '50%'}} src={login_image} alt="Login" />
                         <h2  style={{marginTop: '10px'}} className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Edit Profile</h2>

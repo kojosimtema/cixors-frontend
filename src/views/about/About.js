@@ -1,20 +1,25 @@
+import './About.css'
 import customizeImg from '../../assets/images/plm-customization.jpg';
 import QRCodeImg from '../../assets/images/qrcode.png';
 import analyticsImg from '../../assets/images/analytics.png';
 import shortUrlImage from '../../assets/images/URL-shortener.png';
 
 const About = () => {
+    const token = window.localStorage.getItem('token')
     return (
         <>
             <div className='homepage-wrapper'>
                 <div className='about-main'>
-                    <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 border-b border-gray-200 dark:border-gray-600">
-                        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-                            <button type="button" class="text-white bg-gray-800  hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                <a href='/signin'>Get started</a>
-                            </button>
-                        </div>
-                    </nav>
+                    {
+                        !token &&
+                        <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 border-b border-gray-200 dark:border-gray-600">
+                            <div id='nav-btn' class="max-w-screen-xl flex flex-wrap items-center mx-auto p-4">
+                                <button type="button" class="text-white bg-gray-800  hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                    <a href='/signin'>Get started</a>
+                                </button>
+                            </div>
+                        </nav>
+                    }
                     <div style={{marginTop: '70px', marginBottom: '70px'}} className='about-main'>
                         <div className='about-img'> 
                             <img src={shortUrlImage} alt=''/>

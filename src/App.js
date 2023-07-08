@@ -44,7 +44,7 @@ function App() {
             <Route path='/verify/:email' render={() => <VerifyUser />} />
             <Route path='*' render={() => <NotFound />} />
             <Route path='/changepassword/*' render={() => <Unauthorized />} />
-            <Route path='/edit/*' render={() => <Unauthorized />} />
+            {/* <Route path='/edit/*' render={() => <Unauthorized />} /> */}
           </Switch>
           <Footer />
         </>

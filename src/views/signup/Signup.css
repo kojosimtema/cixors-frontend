@@ -1,3 +1,14 @@
 .username, .email, .password, .confirm_pass {
     padding-left: 10px;
 }
+
+#signup-wrapper {
+    margin-left: 16rem;
+    margin-bottom: 100px;
+}
+
+@media screen and (max-width: 480px) {
+    #signup-wrapper {
+        margin-left: unset;
+    }
+}

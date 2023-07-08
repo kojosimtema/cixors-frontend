@@ -1,0 +1,9 @@
+#edit-pro {
+    margin-left: 16rem;
+}
+
+@media screen and (max-width:480px) {
+    #edit-pro {
+        margin: unset;
+    }
+}

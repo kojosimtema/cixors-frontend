@@ -1,3 +1,14 @@
+#history {
+    top: 80px
+}
+
+.homepage-wrapper div.copy, .homepage-wrapper div.delete {
+    position: fixed;
+    left: 670px;
+    top: 20px;
+    width: 300px;
+}
+
 .hs-cp {
     width: 30px;
 }
@@ -5,3 +16,17 @@
 .hs-cp:active {
     transform: scale(0.8);
 }
+
+@media screen and (max-width: 480px) {
+    #history {
+        width: 95%;
+        margin: 0 auto;
+        top: 130px;
+    }
+
+    .homepage-wrapper div.copy, .homepage-wrapper div.delete {
+        left: 64px;
+        top: 70px;
+    }
+}
+
