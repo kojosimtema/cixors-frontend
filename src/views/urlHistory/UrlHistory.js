@@ -97,71 +97,74 @@ const UrlHistory = () => {
             {
                 token &&
                 <div className='homepage-wrapper'>
-                    <div id='history' class="relative overflow-x-auto shadow-md sm:rounded-lg">
-                        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                            <caption class="p-5 text-4xl font-semibold text-left text-gray-900 bg-white dark:text-white dark:bg-gray-800">
-                                URL History
-                            </caption>
-                            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                                <tr>
-                                    <th scope="col" class="px-6 py-3">
-                                        Short URL
-                                    </th>
-                                    <th scope="col" class="px-6 py-3">
-                                        
-                                    </th>
-                                    <th scope="col" class="px-6 py-3">
-                                        Long URL
-                                    </th>
-                                    <th scope="col" class="px-6 py-3">
-                                        No. Of Clicks
-                                    </th>
-                                    <th scope="col" class="px-6 py-3">
-                                        Action
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {
-                                    urls.map((url) =>{
-                                        return (
+                    <div id='history'>
+                        <div class="p-5 text-4xl font-semibold text-left text-gray-900 bg-white dark:text-white dark:bg-gray-800">
+                            URL History
+                        </div>
+                        <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                            <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                    <tr>
+                                        <th scope="col" class="px-6 py-3">
+                                            Short URL
+                                        </th>
+                                        <th scope="col" class="px-6 py-3">
                                             
-                                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700" key={url.id}>
-                                                <td class="py-4">
-                                                    {url.short_url}
-                                                    
-                                                </td>
-                                                <td>
-                                                    <button onClick={(e)=>{copyUrl(url.short_url)}} style={{width: '30px'}} className="hs-cp text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 font-medium rounded-lg text-sm w-full sm:w-auto text-center">
-                                                        <img src={copy} alt='' />
-                                                    </button>
-                                                </td>
-                                                <td class="py-4">
-                                                    {url.long_url}
-                                                </td>
-                                                <td class="py-4">
-                                                    {url.clicks}
-                                                </td>
-                                                <td class="py-4 text-right" style={{display: 'flex', gap: '10px', justifyContent: 'center'}}>
-                                                    <Link to={`/url/analytics/${url.id}`} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                                        Analytics
-                                                    </Link>
-                                                    
-                                                    <Link to={`/url/edit/${url.id}`} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                                        Customize
-                                                    </Link>
-                                                    <button onClick={(e)=>{submitDeleteUrl(url.id)}} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                                        Delete
-                                                    </button>
-                                                </td>
-                                            </tr>                                            
-                                        
-                                        )
-                                    })
-                                }
-                            </tbody>                        
-                        </table>
+                                        </th>
+                                        <th scope="col" class="px-6 py-3">
+                                            Long URL
+                                        </th>
+                                        <th scope="col" class="px-6 py-3">
+                                            No. Of Clicks
+                                        </th>
+                                        <th scope="col" class="px-6 py-3">
+                                            Action
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {
+                                        urls.map((url) =>{
+                                            return (
+                                                
+                                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700" key={url.id}>
+                                                    <td class="py-4">
+                                                        {url.short_url}
+                                                        
+                                                    </td>
+                                                    <td>
+                                                        <button onClick={(e)=>{copyUrl(url.short_url)}} style={{width: '30px'}} className="hs-cp text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 font-medium rounded-lg text-sm w-full sm:w-auto text-center">
+                                                            <img src={copy} alt='' />
+                                                        </button>
+                                                    </td>
+                                                    <td class="py-4">
+                                                        {url.long_url}
+                                                    </td>
+                                                    <td class="py-4">
+                                                        {url.clicks}
+                                                    </td>
+                                                    <td class="py-4 text-right" style={{display: 'flex', gap: '10px', justifyContent: 'center'}}>
+                                                        <Link to={`/url/analytics/${url.id}`} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                                            Analytics
+                                                        </Link>
+                                                        
+                                                        <Link to={`/url/edit/${url.id}`} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                                            Customize
+                                                        </Link>
+                                                        <button onClick={(e)=>{submitDeleteUrl(url.id)}} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                                            Delete
+                                                        </button>
+                                                    </td>
+                                                </tr>                                            
+                                            
+                                            )
+                                        })
+                                    }
+                                </tbody>                        
+                            </table>
+                        </div>
                     </div>
+                    
                     {
                         copied &&
                         <div id="alert-3" class="copy flex p-4 mb-4 text-green-800 rounded-lg bg-green-100 dark:bg-gray-800 dark:text-green-400" role="alert">

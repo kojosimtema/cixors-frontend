@@ -1,9 +1,14 @@
 #pf {
     top: 80px;
+    margin-bottom: 75px;
 }
 
 th, td {
     text-align: center;
+}
+
+th {
+    padding-right: 0px;
 }
 
 td:nth-child(1), td:nth-child(2){
@@ -13,6 +18,12 @@ td:nth-child(1), td:nth-child(2){
 td {
     padding-left: 10px;
     padding-right: 10px;
+}
+
+#pf ul {
+    max-width: 65rem;
+    padding: revert;
+    margin: revert;
 }
 
 @media screen and (max-width: 480px) {
@@ -25,8 +36,8 @@ td {
         display: inline-block;
     }
 
-    #pf table caption{
-        display: inline-block;
+    #pf .head {
+        /* display: inline-block; */
         width: 100%;
         font-size: 24px;
     }
@@ -37,13 +48,26 @@ td {
         line-height: normal;
     }
 
-    #pf table ul li div div {
-        
-        font-size: 18px;
+    #pf table thead tr th {
+        padding-right: unset;
     }
 
-    #pf table ul li div p {
+    #pf table thead tr th:last-child {
+        padding-right: 10px;
+    }
+
+    #pf ul {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    #pf ul li div div {
         
-        font-size: 16px;
+        font-size: 15px;
+    }
+
+    #pf ul li div p {
+        
+        font-size: 10px;
     }
 }

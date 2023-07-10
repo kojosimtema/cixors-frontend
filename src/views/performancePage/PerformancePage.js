@@ -64,10 +64,11 @@ const PerformancePage = () => {
                 token &&
                 <div className='homepage-wrapper'>
                     <div id='pf' class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                        <div class="head p-5 text-3xl font-semibold text-left text-gray-900 bg-white dark:text-white dark:bg-gray-800">
+                            URL Analytics
+                        </div>
                         <table class="w-full text-xl text-left text-gray-500 dark:text-gray-400">
-                            <caption class="p-5 text-3xl font-semibold text-left text-gray-900 bg-white dark:text-white dark:bg-gray-800">
-                                URL Analytics
-                            </caption>
+                            
                             <thead class="text-xl text-gray-700 bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                 <tr>
                                     <th scope="col" class="px-6 py-3">
@@ -80,8 +81,9 @@ const PerformancePage = () => {
                                         {urlClicks} <span className='fpx-6 py-3'> Click{urlClicks === 1 ? '' : 's'}</span>
                                     </th>
                                 </tr>
-                            </thead>
-                            <ul style={{padding: 'revert', margin: 'revert'}} class="max-w-md divide-y divide-gray-200 dark:divide-gray-700">
+                            </thead>     
+                        </table>
+                        <ul class="max-w-md divide-y divide-gray-200 dark:divide-gray-700">
                             {
                                 urlAnalyitics &&
                                 urlAnalyitics.map((analytic) => {
@@ -117,8 +119,7 @@ const PerformancePage = () => {
                                     )
                                 })
                             } 
-                            </ul>               
-                        </table>
+                        </ul>
                     </div>
                 </div>
             }

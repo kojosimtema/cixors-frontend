@@ -1,12 +1,13 @@
 .sidebar-wrapper {
-    width: max-content;
+    /* width: max-content; */
+    width: 100%;
 }
 
 
 /* MOBILE RESPONSIVENES */
 @media screen and (max-width: 480px) {
     .sidebar-wrapper {
-        width: 100%;
+        width: 50%;
     }
     
     button.hide {

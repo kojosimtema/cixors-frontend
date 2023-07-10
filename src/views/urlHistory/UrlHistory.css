@@ -1,5 +1,7 @@
 #history {
-    top: 80px
+    top: 80px;
+    position: relative;
+    margin-bottom: 75px;
 }
 
 .homepage-wrapper div.copy, .homepage-wrapper div.delete {
@@ -25,7 +27,7 @@
     }
 
     .homepage-wrapper div.copy, .homepage-wrapper div.delete {
-        left: 64px;
+        left: 11%;
         top: 70px;
     }
 }

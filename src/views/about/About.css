@@ -1,100 +1,85 @@
-.about-main nav {
-    /* justify-content: end; */
+.about-wrapper {
+    margin-top: 70px;
+    margin-bottom: 70px;
 }
 
-.about-main nav div {
+.about-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-wrapper nav div {
     justify-content: end;
     width: 60%;
 }
 
-/* MOBILE RESPONSIVE SECTION */
-@media screen and (max-width: 404px) {
-    .about p {
-        font-size: 18px;
-    }
-
-
+.about-main {
+    flex-direction: column;
+    display: flex;
+    gap: 30px;
+    margin: 20px auto;
 }
 
 
+.about-img {
+    width: 40%;
+}
+
+.about {
+    width: 52%;
+}
+
+.about h1, .about h2 {
+    text-align: center;
+}
+
+.about p {
+    text-align: justify;
+}
+
+.about-contain {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+/* MOBILE RESPONSIVE SECTION */
+
 @media screen and (max-width: 480px) {
-    .about-main {
-        flex-direction: column-reverse;
+
+    .about-wrapper {
         width: 94%;
+        margin: 70px auto;
     }
 
-    .about-main nav div {
+    .about-wrapper nav div {
         width: unset;
     }
+
+    .about-head p {
+        text-align: center;
+        /* font-size: 21px; */
+    }
     
+    .about-contain {
+        flex-direction: column;
+    }
+
     .about-img, .about {
         width: unset;
     }
 
-    .about {
-        /* position: absolute;
-        top: 0px; */
-        position: relative;
-        top: -4.5rem;
-    }
-
-    .about-img {
-        position: relative;
-        /* top: 300px; */
-        top: -74rem;
+    .about p a span {
+        font-size: unset;
     }
 
     .about .text-4xl {
         font-size: 2rem;
     }
 
-    .about-img img {
-        position: relative;
-    }
-
-    .about-img img:nth-child(2){
-        top: 260px;
-    }
-
-    .about h1 {
-        position: relative;
-        top: 80px;
-        /* width: 94%; */
-    }
-
     .about h2, .about p {
         position: relative;
     }
 
-    .about p:nth-child(2) {
-        top: 90px;
-    }
-
-    .about h2, .about p {
-        top: 300px;
-    }
-
-    .about h2:nth-child(5), .about p:nth-child(6){
-        top: 560px;
-    }
-
-    .about-img img:nth-child(3){
-        top: 615px;
-    }
-
-    .about h2:nth-child(7), .about p:nth-child(8){
-        top: 800px;
-    }
-
-    .about-img img:nth-child(4){
-        top: 805px;
-    }
-
-    .about h2:nth-child(9), .about p:nth-child(10), .about h2:nth-child(11), .about p:nth-child(12){
-        top: 970px;
-    }
-
-    /* .about h2:nth-child(11), .about p:nth-child(12){
-        top: 970px;
-    } */
 }
