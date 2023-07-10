@@ -92,7 +92,7 @@ const PerformancePage = () => {
                                                         Visitor:
                                                     </div>
                                                     <p class="text-lg font-medium text-gray-900 truncate dark:text-white">
-                                                        {analytic.hostname}
+                                                        {analytic.user_agent}
                                                     </p>
                                                 </div>
                                                 <div class="flex items-center space-x-4">
@@ -108,7 +108,7 @@ const PerformancePage = () => {
                                                         IP Address:
                                                     </div>
                                                     <p class="text-lg font-medium text-gray-900 truncate dark:text-white">
-                                                        {analytic.host_ip}
+                                                        {analytic.ip_address}
                                                     </p>
                                                 </div>
                                             </li>
