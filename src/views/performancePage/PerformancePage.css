@@ -24,6 +24,7 @@ td {
     max-width: 65rem;
     padding: revert;
     margin: revert;
+    margin-bottom: 80px;
 }
 
 @media screen and (max-width: 480px) {
