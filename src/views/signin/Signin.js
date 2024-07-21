@@ -8,6 +8,7 @@ const Signin = () => {
     const [failedLogin, setFailedLogin] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [loading, setLoading] = useState(false);
     // const [success, setSuccess] = useState(false);
 
 
@@ -16,6 +17,7 @@ const Signin = () => {
     }, [])
 
     const login = async () => {
+        setLoading(true)
       await fetch('/auth/login', {
         method: 'POST',
         body: JSON.stringify({
@@ -38,6 +40,7 @@ const Signin = () => {
                 // window.location.href('/');
             }
             setFailedLogin(data.message);
+            setLoading(false);
         })
         .then((err) => console.log(err))
     }
@@ -85,9 +88,16 @@ const Signin = () => {
                                 failedLogin &&
                                 <span style={{color: 'red'}}>{failedLogin}</span>
                             }
-                            <div>
-                                <button type="submit" className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sign in</button>
-                            </div>
+                            {
+                                loading ?
+                                <div>
+                                    <button type="button" disabled className="flex w-full justify-center rounded-md bg-indigo-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 cursor-not-allowed">Signing In..</button>
+                                </div> :
+                                <div>
+                                    <button type="submit" className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sign in</button>
+                                </div>
+                            }
+                            
                         </form>
                     </div>
                     <div className="sm:mx-auto sm:w-full sm:max-w-sm" >
